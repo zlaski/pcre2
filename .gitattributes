@@ -1,0 +1,57 @@
+# configuration
+.*              text eof=lf autocrlf=input
+
+# build scripts and such
+*.sh            text eol=lf autocrlf=input
+*.ac            text eol=lf autocrlf=input
+*.am            text eol=lf autocrlf=input
+*.in            text eol=lf autocrlf=input
+Makefile        text eol=lf autocrlf=input
+Makefile.win    text eol=lf autocrlf=input
+configure       text eol=lf autocrlf=input
+
+# Xcode
+*.pbxproj       text eol=crlf autocrlf=true
+.* icns         binary
+
+# Visual Studio
+*.csproj        text eol=crlf autocrlf=true
+*.vbproj        text eol=crlf autocrlf=true
+*.fsproj        text eol=crlf autocrlf=true
+*.dbproj        text eol=crlf autocrlf=true
+*.vcproj        text eol=crlf autocrlf=true
+*.vcxproj       text eol=crlf autocrlf=true
+*.filter        text eol=crlf autocrlf=true
+*.filters       text eol=crlf autocrlf=true
+*.user          text eol=crlf autocrlf=true
+*.vsprops       text eol=crlf autocrlf=true
+*.sln           text eol=crlf autocrlf=true
+*.dsw           text eol=crlf autocrlf=true
+*.dsp           text eol=crlf autocrlf=true
+*.props         text eol=crlf autocrlf=true
+*.targets       text eol=crlf autocrlf=true
+
+# (Possible) Source files
+*.inc           text eol=lf autocrlf=input
+*.js            text eol=lf autocrlf=input
+*.css           text eol=lf autocrlf=input
+*.c             text eol=lf autocrlf=input
+*.cc            text eol=lf autocrlf=input
+*.cpp           text eol=lf autocrlf=input
+*.h             text eol=lf autocrlf=input
+*.hh            text eol=lf autocrlf=input
+*.rc            text eol=lf autocrlf=input
+*.ini           text eol=lf autocrlf=input
+*.txt           text eol=lf autocrlf=input
+*.xml           text eol=lf autocrlf=input
+*.html          text eol=lf autocrlf=input
+*.md            text eol=lf autocrlf=input
+*.markdown      text eol=lf autocrlf=input
+*.def           text eol=lf autocrlf=input
+*.javs          text eol=lf autocrlf=input
+*.cs            text eol=lf autocrlf=input
+*.bat           text eol=lf autocrlf=input
+*.ps1			text eol=lf autocrlf=input
+
+*.pdf           binary
+*.psd           binary
