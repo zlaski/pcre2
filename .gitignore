@@ -103,3 +103,6 @@ zig-cache/
 .zig-cache/
 
 # End
+
+.build/
+.vs/
