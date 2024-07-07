@@ -1,81 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Build Files">
-      <UniqueIdentifier>{4FC347F1-C7A5-4336-A166-2A32D982A2FF}</UniqueIdentifier>
-      <Extensions>bat;cmd;ps1;cmake;am;in;sh;bash;lst</Extensions>
+    <Filter Include="Other Files">
+      <UniqueIdentifier>{2af9edd6-3597-488a-bb81-c5759106b3a8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Other Files">
-      <UniqueIdentifier>{68DA6CB6-A800-4cf8-8B7A-83BB121EAD01}</UniqueIdentifier>
-      <Extensions>txt;lst;log</Extensions>
+      <UniqueIdentifier>{dbc1b271-b138-4ce3-b60b-ae15bb00d312}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mp3;mp4;mkv;flac;mfcribbon-ms</Extensions>
+      <UniqueIdentifier>{3d127843-e59a-4913-aa10-3c6603ea4a8c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;y;yy;l;asm;asmx;jav;java;cs;s;m;mm;pl;py;rb;htm;html;xml</Extensions>
+      <UniqueIdentifier>{65c2ac86-e266-4e5a-949a-a0ed70e2ca6e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(ProjectName).pre.bat">
-      <Filter>Build Files</Filter>
+    <None Include="pcre2.akibld.bat">
+      <Filter>Other Files</Filter>
     </None>
-    <None Include="$(ProjectName).post.bat">
-      <Filter>Build Files</Filter>
+    <None Include="Makefile.am">
+      <Filter>Other Files</Filter>
+    </None>
+    <None Include="src\pcre2_chartables.c.dist">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\config.h.generic">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="src\pcre2.h.generic">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\pcre2.h.generic">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\config.h.generic">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pcre2posix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pcre2_internal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pcre2_intmodedep.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(IntDir)\config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(IntDir)\pcre2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\pcre2posix.c">
+    <ClCompile Include="src\pcre2_auto_possess.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pcre2_match_data.c">
+    <ClCompile Include="src\pcre2_chkdint.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\pcre2_compile.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pcre2_auto_possess.c">
+    <ClCompile Include="src\pcre2_config.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pcre2_pattern_info.c">
+    <ClCompile Include="src\pcre2_context.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_convert.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_dfa_match.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_extuni.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\pcre2_find_bracket.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\pcre2_jit_compile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\pcre2_match.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\pcre2_match_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\pcre2_newline.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_ord2utf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_pattern_info.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_script_run.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_serialize.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\pcre2_string_utils.c">
@@ -84,25 +92,22 @@
     <ClCompile Include="src\pcre2_study.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pcre2_valid_utf.c">
+    <ClCompile Include="src\pcre2_substitute.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pcre2_chkdint.c">
+    <ClCompile Include="src\pcre2_substring.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\pcre2_tables.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\pcre2_context.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pcre2_script_run.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\pcre2_ucd.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(IntDir)\pcre2_chartables.generated.c">
+    <ClCompile Include="src\pcre2_valid_utf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pcre2_xclass.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

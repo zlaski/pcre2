@@ -9,14 +9,11 @@ if /i "%EVENT%" == "PreCleanStep" (
 
 if /i "%EVENT%" == "PreBuildEvent" (
     echo PreBuildEvent
-
+    
     echo %ProjectDir%\src\pcre2.h.generic --^> %IntDir%\pcre2.h
     copy /y %ProjectDir%\src\pcre2.h.generic %IntDir%\pcre2.h >nul
     echo %ProjectDir%\src\config.h.generic --^> %IntDir%\config.h
     copy /y %ProjectDir%\src\config.h.generic %IntDir%\config.h >nul
-
-    echo %ProjectDir%\src\pcre2_chartables.c.dist --^> %IntDir%\pcre2_chartables.c
-    copy /y %ProjectDir%\src\pcre2_chartables.c.dist %IntDir%\pcre2_chartables.c >nul
 
     exit /b 0
 )

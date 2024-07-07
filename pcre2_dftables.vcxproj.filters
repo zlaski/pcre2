@@ -1,55 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Build Files">
-      <UniqueIdentifier>{4FC347F1-C7A5-4336-A166-2A32D982A2FF}</UniqueIdentifier>
-      <Extensions>bat;cmd;ps1;cmake;am;in;sh;bash;lst</Extensions>
+    <Filter Include="Other Files">
+      <UniqueIdentifier>{2af9edd6-3597-488a-bb81-c5759106b3a8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Other Files">
-      <UniqueIdentifier>{68DA6CB6-A800-4cf8-8B7A-83BB121EAD01}</UniqueIdentifier>
-      <Extensions>txt;lst;log</Extensions>
+      <UniqueIdentifier>{dbc1b271-b138-4ce3-b60b-ae15bb00d312}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mp3;mp4;mkv;flac;mfcribbon-ms</Extensions>
+      <UniqueIdentifier>{3d127843-e59a-4913-aa10-3c6603ea4a8c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;y;yy;l;asm;asmx;jav;java;cs;s;m;mm;pl;py;rb;htm;html;xml</Extensions>
+      <UniqueIdentifier>{65c2ac86-e266-4e5a-949a-a0ed70e2ca6e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(ProjectName).pre.bat">
-      <Filter>Build Files</Filter>
+    <None Include="pcre2_dftables.akibld.bat">
+      <Filter>Other Files</Filter>
     </None>
-    <None Include="$(ProjectName).post.bat">
-      <Filter>Build Files</Filter>
+    <None Include="src\pcre2.h.in">
+      <Filter>Header Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\pcre2_internal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(IntDir)\config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(IntDir)\pcre2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pcre2_dftables.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\pcre2_maketables.c">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(IntDir)\..\pcre2_dftables\pcre2_dftables.generated.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\pcre2_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

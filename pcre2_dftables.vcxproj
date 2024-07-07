@@ -1,33 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <SubSystem>Console</SubSystem>
+  </PropertyGroup>
   <ImportGroup Label="PropertySheets">
-    <Import Project="$(AKIBLD)\akibld-con.props" />
+    <Import Project="$(AKITOOLS)\akibld\akibld.props" />
   </ImportGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9EB33865-C821-43AA-B40E-9DB50AE0000F}</ProjectGuid>
+    <ProjectGuid>{886484C7-9C4B-43CC-9735-3D5C501D609F}</ProjectGuid>
   </PropertyGroup>
-  <ItemDefinitionGroup>
-    <ClCompile>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;PCRE2_EXP_DECL=extern;PCRE2_EXP_DEFN=;PCRE2_STATIC;PCRE2_CODE_UNIT_WIDTH=8;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)src;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="$(ProjectName).pre.bat" />
-    <None Include="$(ProjectName).post.bat" />
+    <None Include="pcre2_dftables.akibld.bat" />
+    <None Include="src\pcre2.h.in" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(IntDir)\config.h" />
-    <ClInclude Include="$(IntDir)\pcre2.h" />
-    <ClInclude Include="src\pcre2_internal.h" />
+    <ProjectReference Include="$(AKIROOT)\svn\akisystems\akilib\akilib.vcxproj">
+      <Project>{0A19BC1F-D9EA-4438-BA0D-2E42C97FC45D}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pcre2_dftables.c" />
     <ClCompile Include="src\pcre2_maketables.c">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="$(IntDir)\pcre2_dftables.generated.c">
-      <ExcludedFromBuild>true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\pcre2_internal.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
