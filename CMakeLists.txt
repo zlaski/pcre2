@@ -577,7 +577,7 @@ ENDIF(WIN32)
 
 OPTION(PCRE2_REBUILD_CHARTABLES "Rebuild char tables" OFF)
 IF(PCRE2_REBUILD_CHARTABLES)
-  ADD_EXECUTABLE(pcre2_dftables src/pcre2_dftables.c)
+  ADD_EXECUTABLE(pcre2_dftables ${builddir}/pcre2_dftables.c)
   ADD_CUSTOM_COMMAND(
     COMMENT "Generating character tables (pcre2_chartables.c) for current locale"
     DEPENDS pcre2_dftables
@@ -597,7 +597,6 @@ SET(PCRE2_HEADERS ${PROJECT_BINARY_DIR}/pcre2.h)
 
 SET(PCRE2_SOURCES
   src/pcre2_auto_possess.c
-  ${PROJECT_BINARY_DIR}/pcre2_chartables.c
   src/pcre2_chkdint.c
   src/pcre2_compile.c
   src/pcre2_config.c

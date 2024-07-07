@@ -303,7 +303,7 @@ EXTRA_DIST += \
 
 src/pcre2.h.generic: src/pcre2.h.in configure.ac
 	rm -f $@
-	cp -p src/pcre2.h $@
+	cp -p ${builddir}/pcre2.h $@
 
 # It is more complicated for config.h.generic. We need the version that results
 # from a default configuration so as to get all the default values for PCRE
@@ -330,7 +330,7 @@ src/config.h.generic: configure.ac
 	  -e 'if(/^#define\s((?:HAVE|SUPPORT|STDC)_\w+)/){print"/* #undef $$1 */\n";$$blank=0;next;}' \
 	  -e 'if(/^#define\s(?!PACKAGE|VERSION)(\w+)/){print"#ifndef $$1\n$$_#endif\n";$$blank=0;next;}' \
 	  -e 'if(/^\s*$$/){print unless $$blank; $$blank=1;} else{print;$$blank=0;}' \
-	  _generic/src/config.h >$@
+	  _generic/${builddir}/config.h >$@
 	rm -rf _generic
 
 MAINTAINERCLEANFILES += src/pcre2.h.generic src/config.h.generic
@@ -338,7 +338,7 @@ MAINTAINERCLEANFILES += src/pcre2.h.generic src/config.h.generic
 # These are the header files we'll install. We do not distribute pcre2.h
 # because it is generated from pcre2.h.in.
 
-nodist_include_HEADERS = src/pcre2.h
+nodist_include_HEADERS = ${builddir}/pcre2.h
 include_HEADERS = src/pcre2posix.h
 
 # This is the "config" script.
@@ -355,17 +355,16 @@ bin_SCRIPTS = pcre2-config
 if WITH_REBUILD_CHARTABLES
 noinst_PROGRAMS += pcre2_dftables
 pcre2_dftables_SOURCES = src/pcre2_dftables.c
-src/pcre2_chartables.c: pcre2_dftables$(EXEEXT)
+$(builddir)/pcre2_chartables.c: pcre2_dftables$(EXEEXT)
 	rm -f $@
 	./pcre2_dftables$(EXEEXT) $@
 else
-src/pcre2_chartables.c: $(srcdir)/src/pcre2_chartables.c.dist
+$(builddir)/pcre2_chartables.c: $(srcdir)/src/pcre2_chartables.c.dist
 	rm -f $@
-	$(LN_S) $(abs_srcdir)/src/pcre2_chartables.c.dist $(abs_builddir)/src/pcre2_chartables.c
+	$(LN_S) $(abs_srcdir)/src/pcre2_chartables.c.dist $(abs_builddir)/pcre2_chartables.c
 endif # WITH_REBUILD_CHARTABLES
 
-BUILT_SOURCES = src/pcre2_chartables.c
-NODIST_SOURCES = src/pcre2_chartables.c
+NODIST_SOURCES = $(builddir)/pcre2_chartables.c
 
 ## Define the list of common sources, then arrange to build whichever of the
 ## 8-, 16-, or 32-bit libraries are configured.
@@ -454,7 +453,7 @@ endif # WITH_PCRE2_32
 # pcre2_chartables.c, used unless --enable-rebuild-chartables is specified.
 
 EXTRA_DIST += src/pcre2_chartables.c.dist
-CLEANFILES += src/pcre2_chartables.c
+CLEANFILES += ${builddir}/pcre2_chartables.c
 
 # The JIT compiler lives in a separate directory, but its files are #included
 # when pcre2_jit_compile.c is processed, so they must be distributed.

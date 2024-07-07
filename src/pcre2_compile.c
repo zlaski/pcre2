@@ -43,6 +43,11 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "config.h"
 #endif
 
+/* Pull in pre-computed character tables.  These are either coppied in
+   from pcre2_chartables.c.dist or generated via the pcre2_dftables utility. */
+
+#include "pcre2_chartables.c"
+
 #define NLBLOCK cb             /* Block containing newline information */
 #define PSSTART start_pattern  /* Field containing processed string start */
 #define PSEND   end_pattern    /* Field containing processed string end */

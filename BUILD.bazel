@@ -4,19 +4,19 @@ load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
 copy_file(
     name = "config_h_generic",
     src = "src/config.h.generic",
-    out = "src/config.h",
+    out = "config.h",
 )
 
 copy_file(
     name = "pcre2_h_generic",
     src = "src/pcre2.h.generic",
-    out = "src/pcre2.h",
+    out = "pcre2.h",
 )
 
 copy_file(
     name = "pcre2_chartables_c",
     src = "src/pcre2_chartables.c.dist",
-    out = "src/pcre2_chartables.c",
+    out = "pcre2_chartables.c",
 )
 
 # Removed src/pcre2_ucptables.c below because it is #included in 
@@ -51,7 +51,6 @@ cc_library(
         "src/pcre2_ucd.c",
         "src/pcre2_valid_utf.c",
         "src/pcre2_xclass.c",
-        ":pcre2_chartables_c",
     ],
     hdrs = glob(["src/*.h"]) + [
         ":config_h_generic",

@@ -436,8 +436,8 @@ library. They are also documented in the pcre2build man page.
 The "configure" script builds the following files for the basic C library:
 
 . Makefile             the makefile that builds the library
-. src/config.h         build-time configuration options for the library
-. src/pcre2.h          the public PCRE2 header file
+. config.h             build-time configuration options for the library
+. pcre2.h              the public PCRE2 header file
 . pcre2-config         script that shows the building settings such as CFLAGS
                          that were set for "configure"
 . libpcre2-8.pc        )

@@ -1,4 +1,4 @@
-/* src/config.h.  Generated from config.h.in by configure.  */
+/* src/config.h.generic.  Generated from config.h.in by configure.  */
 /* src/config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* PCRE2 is written in Standard C, but there are a few non-standard things it

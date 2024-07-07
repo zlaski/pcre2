@@ -435,8 +435,8 @@ library. They are also documented in the pcre2build man page.
 The "configure" script builds the following files for the basic C library:
 
 . Makefile             the makefile that builds the library
-. src/config.h         build-time configuration options for the library
-. src/pcre2.h          the public PCRE2 header file
+. config.h             build-time configuration options for the library
+. pcre2.h              the public PCRE2 header file
 . pcre2-config         script that shows the building settings such as CFLAGS
                          that were set for "configure"
 . libpcre2-8.pc        )
@@ -818,8 +818,8 @@ The distribution should contain the files listed below.
                            when --enable-rebuild-chartables is specified
 
   src/pcre2_chartables.c.dist  a default set of character tables that assume
-                           ASCII coding; unless --enable-rebuild-chartables is
-                           specified, used by copying to pcre2_chartables.c
+                               ASCII coding; unless --enable-rebuild-chartables is
+                               specified, used by copying to pcre2_chartables.c
 
   src/pcre2posix.c         )
   src/pcre2_auto_possess.c )

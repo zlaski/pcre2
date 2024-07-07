@@ -33,12 +33,7 @@ pub fn build(b: *std.Build) !void {
 
     lib.root_module.addCMacro("PCRE2_CODE_UNIT_WIDTH", @tagName(codeUnitWidth));
 
-    lib.addCSourceFile(.{
-        .file = copyFiles.addCopyFile(b.path("src/pcre2_chartables.c.dist"), "pcre2_chartables.c"),
-        .flags = &.{
-            "-DHAVE_CONFIG_H",
-        },
-    });
+    _ = copyFiles.addCopyFile(b.path("src/pcre2_chartables.c.dist"), "pcre2_chartables.c"),
 
     lib.addIncludePath(b.path("src"));
     lib.addIncludePath(copyFiles.getDirectory());

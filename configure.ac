@@ -27,7 +27,7 @@ AC_INIT([PCRE2],pcre2_major.pcre2_minor[]pcre2_prerelease,[],[pcre2])
 AC_CONFIG_SRCDIR([src/pcre2.h.in])
 AM_INIT_AUTOMAKE([dist-bzip2 dist-zip])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
-AC_CONFIG_HEADERS(src/config.h)
+AC_CONFIG_HEADERS(config.h)
 
 # This was added at the suggestion of libtoolize (03-Jan-10)
 AC_CONFIG_MACRO_DIR([m4])
@@ -1105,7 +1105,7 @@ AC_CONFIG_FILES(
 	libpcre2-32.pc
 	libpcre2-posix.pc
 	pcre2-config
-	src/pcre2.h
+	pcre2.h
 )
 
 # Make the generated script files executable.
@@ -1113,7 +1113,7 @@ AC_CONFIG_COMMANDS([script-chmod], [chmod a+x pcre2-config])
 
 # Make sure that pcre2_chartables.c is removed in case the method for
 # creating it was changed by reconfiguration.
-AC_CONFIG_COMMANDS([delete-old-chartables], [rm -f pcre2_chartables.c])
+AC_CONFIG_COMMANDS([delete-old-chartables], [rm -f ${builddir}/pcre2_chartables.c])
 
 AC_OUTPUT
 

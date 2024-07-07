@@ -4362,12 +4362,12 @@ CREATING CHARACTER TABLES AT BUILD TIME
        output file as its argument, for example:
 
          cc src/pcre2_dftables.c -o pcre2_dftables
-         ./pcre2_dftables src/pcre2_chartables.c
+         ./pcre2_dftables ${builddir}/pcre2_chartables.c
 
        This  builds the tables in the default locale of the local host. If you
        want to specify a locale, you must use the -L option:
 
-         LC_ALL=fr_FR ./pcre2_dftables -L src/pcre2_chartables.c
+         LC_ALL=fr_FR ./pcre2_dftables -L ${builddir}/pcre2_chartables.c
 
        You can also specify -b (with or without -L). This causes the tables to
        be written in binary instead of as source code. A set of binary  tables
